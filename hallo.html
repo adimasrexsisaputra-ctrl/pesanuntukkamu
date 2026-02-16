@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semangat</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0f172a, #1e293b, #334155);
+      overflow: hidden;
+      color: white;
+    }
+
+    .bubble {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.7;
+      animation: float 6s infinite alternate ease-in-out;
+    }
+
+    .bubble:nth-child(1) {
+      background: #38bdf8;
+      top: -100px;
+      left: -100px;
+    }
+
+    .bubble:nth-child(2) {
+      background: #a855f7;
+      bottom: -120px;
+      right: -120px;
+      animation-delay: 1s;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to { transform: translateY(40px); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 90%;
+      max-width: 420px;
+      padding: 40px 30px;
+      text-align: center;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 16px;
+      opacity: 0.85;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(90deg, #38bdf8, #a855f7);
+      transition: 0.3s ease;
+      box-shadow: 0px 6px 15px rgba(56, 189, 248, 0.4);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0px 10px 20px rgba(168, 85, 247, 0.5);
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 12px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bubble"></div>
+  <div class="bubble"></div>
+
+  <!-- MUSIC -->
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="container">
+    <h1>HAI 👋</h1>
+    <p>
+      AKU <br>
+      ADA PESAN NIH BUAT KAMU✨
+    </p>
+    
+    <button class="btn" onclick="startPage()">🌸 Mulai</button>
+
+    <footer>BY ADIMAS</footer>
+  </div>
+
+  <script>
+  function startPage() {
+    localStorage.setItem("playMusic", "true");
+    window.location.href = "flower.html";
+  }
+</script>
+
+</body>
+</html>
