@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="img/flowers.png" type="image/x-icon">
+  <title>flowers</title>
+
+  <style>
+    /* TEXT TYPING RESPONSIVE */
+    .text-container {
+      position: fixed;
+      top: 50%;
+      left: 30px;
+      transform: translateY(-50%);
+      z-index: 9999;
+      pointer-events: none;
+
+      width: 400px;
+      max-width: 40vw;
+
+      font-size: 18px;
+      font-weight: 600;
+      color: white;
+      text-shadow: 0px 0px 12px rgba(0,0,0,0.8);
+
+      line-height: 1.8;
+      text-align: justify;
+
+      padding: 15px 10px;
+      white-space: pre-line;
+    }
+
+    /* Cursor */
+    .cursor {
+      display: inline-block;
+      width: 8px;
+      height: 18px;
+      background: white;
+      margin-left: 5px;
+      animation: blink 0.7s infinite;
+      border-radius: 2px;
+      vertical-align: bottom;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
+    }
+
+    /* RESPONSIVE UNTUK HP */
+    @media (max-width: 768px) {
+      .text-container {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        width: 90%;
+        max-width: 90%;
+
+        font-size: 14px;
+        line-height: 1.7;
+        text-align: justify;
+
+        padding: 12px;
+      }
+
+      .cursor {
+        height: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body class="container">
+
+  <!-- TEXT TYPING -->
+  <div class="text-container">
+    <span id="typing"></span><span class="cursor"></span>
+  </div>
+
+  <!-- MUSIC -->
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Background Night -->
+  <div class="night"></div>
+
+  <!-- FLOWERS -->
+  <div class="flowers">
+    <div class="flower flower--1">
+      <div class="flower__leafs flower__leafs--1">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+      </div>
+
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+        <div class="flower__line__leaf flower__line__leaf--5"></div>
+        <div class="flower__line__leaf flower__line__leaf--6"></div>
+      </div>
+    </div>
+
+    <div class="flower flower--2">
+      <div class="flower__leafs flower__leafs--2">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+      </div>
+
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+
+    <div class="flower flower--3">
+      <div class="flower__leafs flower__leafs--3">
+        <div class="flower__leaf flower__leaf--1"></div>
+        <div class="flower__leaf flower__leaf--2"></div>
+        <div class="flower__leaf flower__leaf--3"></div>
+        <div class="flower__leaf flower__leaf--4"></div>
+        <div class="flower__white-circle"></div>
+
+        <div class="flower__light flower__light--1"></div>
+        <div class="flower__light flower__light--2"></div>
+        <div class="flower__light flower__light--3"></div>
+        <div class="flower__light flower__light--4"></div>
+        <div class="flower__light flower__light--5"></div>
+        <div class="flower__light flower__light--6"></div>
+        <div class="flower__light flower__light--7"></div>
+        <div class="flower__light flower__light--8"></div>
+      </div>
+
+      <div class="flower__line">
+        <div class="flower__line__leaf flower__line__leaf--1"></div>
+        <div class="flower__line__leaf flower__line__leaf--2"></div>
+        <div class="flower__line__leaf flower__line__leaf--3"></div>
+        <div class="flower__line__leaf flower__line__leaf--4"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+
+  <!-- AUTOPLAY MUSIC -->
+  <script>
+    window.addEventListener("load", () => {
+      const music = document.getElementById("bg-music");
+      music.volume = 0.5;
+
+      if (localStorage.getItem("playMusic") === "true") {
+        music.play().catch(() => {
+          console.log("Autoplay diblokir browser.");
+        });
+      }
+    });
+  </script>
+
+  <!-- TYPING EFFECT -->
+  <script>
+    const typingElement = document.getElementById("typing");
+
+    const text = `Pernah dengar filosofi gelas kosong? Sebuah gelas yang terisi airnya sebanyak apapun kita mengisi air ke gelas penuh airnya hanya akan jatuh Sedangkan sebuah gelas kosong jika kita mengisikan air ke dalamnya airnya akan tersimpan di dalam gelas itu Ketika kita bertemu orang baru usahakan jadi gelas yang kosong ya Tujuannya apa Tujuannya agar kita mempelajari hal baru dari orang tersebut agar apa yang disampaikan orang tersebut bisa jadi pelajaran buat kita Sebaliknya kalau kita ingin menjadi seseorang yang menyampaikan pesan nasihat pengalaman dan lain sebagainya bukan jadi gelas yang penuh tapi jadilah seperti teko yang kalau ingin menuangkan air ia harus menunduk terlebih dahulu Teko yang tawadhu atau rendah hati mengajari tapi tidak merendahkan yang diajari Intinya kita perlu selalu hati-hati kalau bertemu orang lain`;
+
+    let index = 0;
+
+    function typeText() {
+      if (index < text.length) {
+        typingElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, 48);
+      }
+    }
+
+    typeText();
+  </script>
+
+</body>
+</html>
